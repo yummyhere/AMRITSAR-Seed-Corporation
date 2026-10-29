@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+
+  --color-cream: #F8F4E9;
+  --color-cream-warm: #FBF8F1;
+  --color-forest: #203D2F;
+  --color-forest-dark: #162C22;
+  --color-forest-light: #2A4E3D;
+  --color-sage: #C7D1AF;
+  --color-sage-light: #E3EBDB;
+  --color-sage-tint: #DDE5CE;
+  --color-gold: #E6B04F;
+  --color-gold-dark: #C99632;
+  --color-text-dark: #1F382B;
+  --color-text-muted: #536B5E;
+}
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Custom organic blob border-radii */
+.organic-blob-hero {
+  border-radius: 48% 52% 43% 57% / 54% 46% 54% 46%;
+}
+
+.organic-blob-cotton {
+  border-radius: 58% 42% 49% 51% / 46% 52% 48% 54%;
+}
+
+.organic-blob-rice {
+  border-radius: 46% 54% 57% 43% / 52% 44% 56% 48%;
+}
+
+.organic-blob-corn {
+  border-radius: 49% 51% 42% 58% / 58% 49% 51% 42%;
+}
+
+.organic-blob-fodder {
+  border-radius: 54% 46% 52% 48% / 44% 58% 42% 56%;
+}
+
+.organic-blob-facility {
+  border-radius: 52% 48% 62% 38% / 48% 52% 48% 52%;
+}
+
+.organic-blob-grower {
+  border-radius: 44% 56% 48% 52% / 56% 42% 58% 44%;
+}
+
+.organic-badge-sowing {
+  border-radius: 62% 38% 56% 44% / 48% 60% 40% 52%;
+}
+
+/* Continuous Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-duration: 90s;
+  }
+}
+
+/* Rotating Process Wheel */
+@keyframes spin-continuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-wheel {
+  animation: spin-continuous 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-spin-wheel-paused {
+  animation: spin-continuous 40s linear infinite;
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-wheel {
+    animation-duration: 120s;
+  }
+}
+
+/* Gentle floating animations */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.animate-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: gentle-sway 5s ease-in-out infinite;
+}
+
+/* Selection and link resets */
+::selection {
+  background-color: #C7D1AF;
+  color: #162C22;
+}
+
+/* Scroll smooth */
+html {
+  scroll-behavior: smooth;
+}

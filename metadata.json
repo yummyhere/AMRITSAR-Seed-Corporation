@@ -1,0 +1,6 @@
+{
+  "name": "Amritsar Seed Corporation",
+  "description": "Amritsar Seed Corporation - Quality seeds for cotton, rice, corn, and fodder, supporting farmers and building a stronger agricultural future.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
